@@ -7,11 +7,6 @@ using System.Threading.Tasks;
 namespace SocialNetworkingLibrary
 {
 
-    public interface ITimeFormatter
-    {
-        string Format(DateTime timeInput, DateTime timeNow);
-    }
-
 
 
     public class PrettyTimeFormatter : ITimeFormatter

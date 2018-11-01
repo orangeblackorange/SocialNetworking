@@ -10,18 +10,32 @@ namespace SocialNetworkingLibrary
     public class SocialNetworkingService
     {
 
-        private List<Post> posts;
-        private IConsoleWriter writer = null;
-        public SocialNetworkingService(List<Post> posts, IConsoleWriter writer)
+        //private List<Post> posts;
+        ////private IConsoleWriter writer = null;
+        //private Dictionary<string, List<string>> followers = null;
+        //private List<ICommand> commands;
+
+        //public SocialNetworkingService(List<Post> posts, Dictionary<string, List<string>> followers, List<ICommand> commands)
+        //{
+        //    this.posts = posts;
+        //    //this.writer = writer;
+        //    this.followers = followers;
+        //    this.commands = commands;
+        //}
+
+        private List<ICommand> commands;
+
+        public SocialNetworkingService(List<ICommand> commands)
         {
-            this.posts = posts;
-            this.writer = writer;
+            this.commands = commands;
         }
 
         public void Process(string input)
         {
-            (new CommandPosting(this.posts)).Process(input);
-            (new CommandReading(this.posts, writer)).Process(input);
+            foreach (var command in commands)
+            {
+                command.Process(input);
+            }
         }
 
     }

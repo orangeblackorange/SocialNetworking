@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SocialNetworkingLibrary\SocialNetworkingLibrary.csproj">
+      <Project>{3BD50CD8-78F5-4535-9A4E-EF76845FB18F}</Project>
+      <Name>SocialNetworkingLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

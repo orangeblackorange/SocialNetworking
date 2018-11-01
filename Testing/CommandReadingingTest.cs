@@ -48,21 +48,4 @@ namespace Testing
             writerMock.Verify(m => m.WriteLine(resultPosts[2]));
         }
     }
-
-    class AMockConsoleWriter : IConsoleWriter
-    {
-        public string WriteLine(string line)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string WriteLine(Post post)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-
-
-
 }

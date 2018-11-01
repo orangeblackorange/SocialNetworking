@@ -45,25 +45,6 @@ namespace Testing
             Assert.AreEqual("Charlie", resultPosts[1].UserName);
             Assert.AreEqual("I'm in New York today! Anyone wants to have a coffee?", resultPosts[1].Message);
         }
-
-
-        //[Test]
-        //public void ReadingTimelineOnePostTest()
-        //{
-        //    var resultPosts = new List<Post>();
-        //    string consoleInput = "Alice -> I love the weather today";
-
-        //    var timeNow = new DateTime(1998, 04, 30, 0, 3, 0);
-        //    var formatter = new PrettyTimeFormatter(timeNow);
-        //    var writter = new ConsoleWriter(new MockConsoleWriter(), formatter);
-
-
-        //    var service = new SocialNetworkingService(resultPosts, writter);
-        //    service.Process(consoleInput);
-        //    service.Process("Alice");
-
-        //    Assert.AreEqual("I love the weather today (5 minutes ago)", resultPosts.Message);
-        //}
     }
 
 

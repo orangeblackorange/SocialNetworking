@@ -8,6 +8,7 @@ using SocialNetworkingLibrary;
 
 namespace Testing
 {
+    [TestFixture]
     class PrettyTimeFormatterTest
     {
         [Test]

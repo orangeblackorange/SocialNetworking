@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace SocialNetworkingLibrary
 {
-    public class PrettyTimeFormatter
+
+    public interface ITimeFormatter
+    {
+        string Format(DateTime timeInput);
+    }
+
+
+
+    public class PrettyTimeFormatter : ITimeFormatter
     {
         private DateTime referenceTime;
         public PrettyTimeFormatter(DateTime referenceTime)

@@ -22,6 +22,23 @@ namespace Testing
             Assert.AreEqual("Alice", post.UserName);
             Assert.AreEqual("I love the weather today", post.Message);
         }
+
+        [Test]
+        public void AddTwoPostsTest()
+        {
+            string consoleInput1 = "Alice -> I love the weather today";
+            string consoleInput2 = "Charlie -> I'm in New York today! Anyone wants to have a coffee?";
+
+            var service = new SocialNetworkingService();
+            var post1 = service.Process(consoleInput1);
+            var post2 = service.Process(consoleInput2);
+
+            Assert.AreEqual("Alice", post1.UserName);
+            Assert.AreEqual("I love the weather today", post1.Message);
+
+            Assert.AreEqual("Charlie", post2.UserName);
+            Assert.AreEqual("I'm in New York today! Anyone wants to have a coffee?", post2.Message);
+        }
     }
 }
 

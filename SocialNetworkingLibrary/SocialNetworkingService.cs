@@ -13,7 +13,7 @@ namespace SocialNetworkingLibrary
         {
             Post result = null;
 
-            var matchResult = Regex.Match(input, @"(?<username>\w+) -> (?<message>([\w\s]*))");
+            var matchResult = Regex.Match(input, @"(?<username>\w+) -> (?<message>([\w\s\p{P}]*))");
             if (matchResult.Success)
             {
                 var username = matchResult.Groups["username"].Value;

@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandFollowingTest.cs" />
+    <Compile Include="CommandWallTest.cs" />
     <Compile Include="CommandReadingingTest.cs" />
     <Compile Include="CommandPostingTest.cs" />
     <Compile Include="ConsoleWritterTest.cs" />

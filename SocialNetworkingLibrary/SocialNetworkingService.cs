@@ -10,19 +10,6 @@ namespace SocialNetworkingLibrary
     public class SocialNetworkingService
     {
 
-        //private List<Post> posts;
-        ////private IConsoleWriter writer = null;
-        //private Dictionary<string, List<string>> followers = null;
-        //private List<ICommand> commands;
-
-        //public SocialNetworkingService(List<Post> posts, Dictionary<string, List<string>> followers, List<ICommand> commands)
-        //{
-        //    this.posts = posts;
-        //    //this.writer = writer;
-        //    this.followers = followers;
-        //    this.commands = commands;
-        //}
-
         private List<ICommand> commands;
 
         public SocialNetworkingService(List<ICommand> commands)
@@ -62,7 +49,7 @@ namespace SocialNetworkingLibrary
             {
                 var username = matchResult.Groups["username"].Value;
                 var message = matchResult.Groups["message"].Value;
-                posts.Add(new Post { UserName = username, Message = message });
+                posts.Add(new Post { UserName = username, Message = message, When = DateTime.Now });
             }
         }
     }

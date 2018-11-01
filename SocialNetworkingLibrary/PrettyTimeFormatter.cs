@@ -9,28 +9,22 @@ namespace SocialNetworkingLibrary
 
     public interface ITimeFormatter
     {
-        string Format(DateTime timeInput);
+        string Format(DateTime timeInput, DateTime timeNow);
     }
 
 
 
     public class PrettyTimeFormatter : ITimeFormatter
     {
-        private DateTime referenceTime;
-        public PrettyTimeFormatter(DateTime referenceTime)
-        {
-            this.referenceTime = referenceTime;
-        }
-
-        public string Format(DateTime timeInput)
+        public string Format(DateTime timeInput, DateTime timeNow)
         {
             string unit = "seconds";
 
-            var seconds = (referenceTime - timeInput).TotalSeconds;
+            int seconds = (int)(timeNow - timeInput).TotalSeconds;
             var result = string.Format("({0} {1} ago)", seconds, unit);
             if (seconds > 60)
             {
-                var minutes = (referenceTime - timeInput).TotalMinutes;
+                int minutes = (int)(timeNow - timeInput).TotalMinutes;
                 unit = "minutes";
                 result = string.Format("({0} {1} ago)", minutes, unit);
             }

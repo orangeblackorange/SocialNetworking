@@ -14,7 +14,7 @@ namespace SocialNetworking
             var posts = new List<Post>();
             var followers = new Dictionary<string, List<string>>();
 
-            var writer = new ConsoleWriter(new TextWriterWrapper(Console.Out), new PrettyTimeFormatter(DateTime.Now) );
+            var writer = new ConsoleWriter(new TextWriterWrapper(Console.Out), new PrettyTimeFormatter() );
 
             var commands = new List<ICommand>
             {

@@ -36,12 +36,11 @@ namespace Testing
 
     class MockTimeFormatter : ITimeFormatter
     {
-        public string Format(DateTime timeInput)
+        public string Format(DateTime timeInput, DateTime timeNow)
         {
             Assert.AreEqual("it gets here", "it gets here");
             return "";
         }
-
     }
 
 }

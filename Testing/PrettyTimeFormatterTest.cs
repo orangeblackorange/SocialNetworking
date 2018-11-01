@@ -16,8 +16,8 @@ namespace Testing
         {
             var timeNow = new DateTime(1998, 04, 30, 0, 0, 5);
             var timeInput = new DateTime(1998, 04, 30, 0, 0, 0);
-            var context = new PrettyTimeFormatter(timeNow);
-            var result = context.Format(timeInput);
+            var context = new PrettyTimeFormatter();
+            var result = context.Format(timeInput, timeNow);
             
             Assert.AreEqual("(5 seconds ago)", result);
         }
@@ -27,8 +27,8 @@ namespace Testing
         {
             var timeNow = new DateTime(1998, 04, 30, 0, 3, 0);
             var timeInput = new DateTime(1998, 04, 30, 0, 0, 0);
-            var context = new PrettyTimeFormatter(timeNow);
-            var result = context.Format(timeInput);
+            var context = new PrettyTimeFormatter();
+            var result = context.Format(timeInput, timeNow);
 
             Assert.AreEqual("(3 minutes ago)", result);
         }

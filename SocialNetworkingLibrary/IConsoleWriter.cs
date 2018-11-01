@@ -51,7 +51,7 @@ namespace SocialNetworkingLibrary
 
         public string WriteLine(Post post)
         {
-            var result = string.Format("{0} -> {1} {2}", post.UserName, post.Message, formater.Format(post.When));
+            var result = string.Format("{0} -> {1} {2}", post.UserName, post.Message, formater.Format(post.When, DateTime.Now));
             this.writer.WriteLine(result);
             return result.Trim();
         }

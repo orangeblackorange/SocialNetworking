@@ -23,6 +23,7 @@ namespace Testing
             Assert.AreEqual(1, resultPosts.Count);
             Assert.AreEqual("Alice", resultPosts[0].UserName);
             Assert.AreEqual("I love the weather today", resultPosts[0].Message);
+            //Assert.AreEqual("(5 seconds ago)", resultPosts[0].When);
         }
 
         [Test]

@@ -9,19 +9,23 @@ namespace SocialNetworkingLibrary
 {
     public class SocialNetworkingService
     {
-        public Post Process(string input)
-        {
-            Post result = null;
 
+        private List<Post> posts;
+        public SocialNetworkingService(List<Post> posts)
+        {
+            this.posts = posts;
+        }
+
+
+        public void Process(string input)
+        {
             var matchResult = Regex.Match(input, @"(?<username>\w+) -> (?<message>([\w\s\p{P}]*))");
             if (matchResult.Success)
             {
                 var username = matchResult.Groups["username"].Value;
                 var message = matchResult.Groups["message"].Value;
-                result = new Post { UserName = username, Message = message };
+                this.posts.Add(new Post { UserName = username, Message = message });
             }
-
-            return result;
         }
     }
 

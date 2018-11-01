@@ -14,30 +14,34 @@ namespace Testing
         [Test]
         public void AddPostTest()
         {
+            var resultPosts = new List<Post>();
             string consoleInput = "Alice -> I love the weather today";
 
-            var service = new SocialNetworkingService();
-            var post = service.Process(consoleInput);
+            var service = new SocialNetworkingService(resultPosts);
+            service.Process(consoleInput);
 
-            Assert.AreEqual("Alice", post.UserName);
-            Assert.AreEqual("I love the weather today", post.Message);
+            Assert.AreEqual(1, resultPosts.Count);
+            Assert.AreEqual("Alice", resultPosts[0].UserName);
+            Assert.AreEqual("I love the weather today", resultPosts[0].Message);
         }
 
         [Test]
         public void AddTwoPostsTest()
         {
+            var resultPosts = new List<Post>();
             string consoleInput1 = "Alice -> I love the weather today";
             string consoleInput2 = "Charlie -> I'm in New York today! Anyone wants to have a coffee?";
 
-            var service = new SocialNetworkingService();
-            var post1 = service.Process(consoleInput1);
-            var post2 = service.Process(consoleInput2);
+            var service = new SocialNetworkingService(resultPosts);
+            service.Process(consoleInput1);
+            service.Process(consoleInput2);
 
-            Assert.AreEqual("Alice", post1.UserName);
-            Assert.AreEqual("I love the weather today", post1.Message);
+            Assert.AreEqual(2, resultPosts.Count);
+            Assert.AreEqual("Alice", resultPosts[0].UserName);
+            Assert.AreEqual("I love the weather today", resultPosts[0].Message);
 
-            Assert.AreEqual("Charlie", post2.UserName);
-            Assert.AreEqual("I'm in New York today! Anyone wants to have a coffee?", post2.Message);
+            Assert.AreEqual("Charlie", resultPosts[1].UserName);
+            Assert.AreEqual("I'm in New York today! Anyone wants to have a coffee?", resultPosts[1].Message);
         }
     }
 }
